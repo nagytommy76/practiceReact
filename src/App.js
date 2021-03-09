@@ -1,10 +1,14 @@
-import Header from './components/Header/Header.jsx'
+import Navbar from './components/PageComponents/Navbar.jsx'
+import Footer from './components/PageComponents/Footer'
+
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 function App() {
   return (
-    <>
-      <Header title="My First React App"></Header>
-    </>
+    <Router>
+      <Navbar title="My First React App"></Navbar>
+      <Footer />
+    </Router>
   );
 }
 
