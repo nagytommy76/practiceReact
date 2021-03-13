@@ -1,14 +1,20 @@
 .Button{
     padding: .7rem;
-    border: 2px solid black;
+    border: none;
     border-radius: 50px;
     font-size: 1rem;
     outline: none;
     cursor: pointer;
-    background: transparent;
+    margin: .5rem;
+    width: 120px;
+    transition: all .3s;
+}
+.Button:hover{
+    transform: scale(1.08);
 }
 .Button.Primary{
-    /* border: none; */
-    background-color: red;
-    color: white;
+    background-color: #8baa00;
+}
+.Button.Secondary{
+    color: yellow;
 }

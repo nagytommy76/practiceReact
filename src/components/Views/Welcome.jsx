@@ -1,9 +1,9 @@
 import Button from '../BaseUtility/Button/BaseButton'
 const Welcome = () => {
-    return (
+    return(
         <>
             <h1>Kezdő oldal</h1>
-            <Button text='Semmi'></Button>
+            <Button text='Button'></Button>
         </>
     )
 }
