@@ -6,19 +6,21 @@
     align-items: center;
     background-color: #c97200;
     color: white;
-    &-title{
+    .title{
         margin: 0;
         font-size: 2rem;
     }
-    &-list{
+    .list{
         display: flex;
         flex-direction: row;
 
-        &-item{
+        .item{
             margin: .7rem;
             font-size: 1.4rem;
             list-style: none;
             cursor: pointer;
+            text-decoration: none;
+            color: black;
         }
     }
 }

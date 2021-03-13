@@ -1,4 +1,4 @@
-.btn{
+.Button{
     padding: .7rem;
     border: 2px solid black;
     border-radius: 50px;
@@ -6,4 +6,9 @@
     outline: none;
     cursor: pointer;
     background: transparent;
+}
+.Button.Primary{
+    /* border: none; */
+    background-color: red;
+    color: white;
 }
