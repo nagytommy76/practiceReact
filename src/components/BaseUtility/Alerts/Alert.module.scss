@@ -1,0 +1,17 @@
+.Alert{
+    min-width: 40%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+.Danger{
+    background-color: #e00707;
+    color: white;
+}
+.Success{
+    background-color: rgb(18, 212, 0);
+    color: #222;
+}

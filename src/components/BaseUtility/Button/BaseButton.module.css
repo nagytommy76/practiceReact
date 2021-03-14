@@ -7,7 +7,7 @@
     cursor: pointer;
     margin: .5rem;
     width: 120px;
-    transition: all .3s;
+    transition: all .18s;
 }
 .Button:hover{
     transform: scale(1.08);
