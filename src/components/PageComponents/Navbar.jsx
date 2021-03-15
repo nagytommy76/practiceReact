@@ -9,7 +9,7 @@ const Navbar = ({title}) => {
             <h1 className={NavbarClasses.title}>{title}</h1>
             <ul className={NavbarClasses.list}>
                 <Link className={NavbarClasses.item} to='/'>Main Page</Link>
-                <Link className={NavbarClasses.item} to='/products'>Products</Link>
+                <Link className={NavbarClasses.item} to={{pathname: "/products"}}>Products</Link>
             </ul>
         </nav>
     )
