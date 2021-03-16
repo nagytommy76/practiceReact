@@ -1,26 +1,14 @@
-import React, { useState }from 'react'
+import React from 'react'
 import CardClasses from './BaseCard.module.scss'
 import PropTypes from 'prop-types'
-import Alert from '../Alerts/Alert'
 
 import { connect } from 'react-redux'
-import {DELETE_POSTS} from '../../../Store/actions'
+import {DELETE_POSTS, SET_DELETED_TO_DEFAULT} from '../../../Store/Actions/actions'
 
 const Button = React.lazy(() => import('../Button/BaseButton'))
-// const Alert = React.lazy(() => import('../Alerts/Alert'))
+
 
 const BaseCard = ({ id, title, body, deletePost }) => {
-    const [isAlertOpen, setAlert] = useState(false)
-    function openAlert(){
-        setAlert(!isAlertOpen)
-        setTimeout(() => setAlert(false), 2500)
-    }
-    let alertSection = null
-    if (isAlertOpen) {
-        alertSection = (
-            <Alert text="Alert is open!" />
-        )
-    }
     return (
         <section className={CardClasses.Card}>
             <header className={CardClasses.Header}>
@@ -29,12 +17,6 @@ const BaseCard = ({ id, title, body, deletePost }) => {
             <section className={CardClasses.Body}>
                 <p>{body}</p>
                 <p>ID: {id}</p>
-            {/* {
-            isAlertOpen ?
-                <Alert text="Alert is open!" />:
-                null
-            } */}
-            {alertSection}
             </section>
             <footer className={CardClasses.Footer}>
                 <Button text="Remove ME!" customClick={() => deletePost(id)}/>
@@ -50,7 +32,10 @@ BaseCard.propTypes = {
 
 const mapDispatchToProps = dispatch => {
     return{
-        deletePost: (inputId) => dispatch({ type: DELETE_POSTS, id: inputId})
+        deletePost: (inputId) => {
+            dispatch({ type: DELETE_POSTS, id: inputId})
+            setTimeout(() => dispatch({ type: SET_DELETED_TO_DEFAULT }), 2500)
+        }
     }
 }
 
