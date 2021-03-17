@@ -14,12 +14,6 @@ const Products = ({ posts, isDeleted, deletedId }) => {
             <Alert text={`Post Removed. ID: ${deletedId}`} />
         )
     }
-
-    // const fetchItems = async () => {
-    //     const data = await fetch('https://jsonplaceholder.typicode.com/posts')
-    //     const response = await data.json()
-    //     setItems(response)
-    // }
     // console.log('[PRODUCTS PROPS.POSTS] ', posts)
     // console.log('[PRODUCTS PROPS.IS_DELETED] ', isDeleted)
     // console.log('[PRODUCTS PROPS.DELETED_ID] ', deletedId)

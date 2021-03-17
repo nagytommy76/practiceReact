@@ -9,6 +9,9 @@ import classes from './Form.module.scss'
 const Form = ({ setPosts}) => {
     const [formTitle, setFormTitle] = useState('')
     const [formBody, setFormBody] = useState('')
+    // useEffect(() => {
+    //     savePost()
+    // }, [])
 
     const submitEvent = (event) =>{
         event.preventDefault()
@@ -38,7 +41,8 @@ const Form = ({ setPosts}) => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        setPosts: (body, title) => dispatch(setPost({id: Math.floor(Math.random() * 1000), body, title}))
+        setPosts: (body, title) => dispatch(setPost({id: Math.floor(Math.random() * 1000), body, title})),
+        // savePost: () => console.log('csááá')
     }
 }
 

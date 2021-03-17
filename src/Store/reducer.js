@@ -1,14 +1,13 @@
 import { SET_POSTS, DELETE_POSTS, SET_DELETED_TO_DEFAULT } from './Actions/actions'
 const initialState ={
-    posts: [
-        { 
-            id: 0,
-            title: 'Teszt Post',
-            body: 'A reducer.js file-ból jövök, és default vagyok'
-        }
-    ],
+    posts: [ ],
     isDeleted: false,
-    deletedId: null
+    deletedId: null,
+    hasError: {
+        has: false,
+        errorCode: null,
+        message: ''
+    }
 }
 
 const reducer = (state = initialState, action) => {
