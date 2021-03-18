@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { setPost } from '../../../../Store/Actions/actions'
+import { setPost, savePost } from '../../../../Store/Actions/index'
 
 import FormItem from '../../../BaseUtility/FormInput/FormInput'
 import Button from '../../../BaseUtility/Button/BaseButton'
 import classes from './Form.module.scss'
 
-const Form = ({ setPosts}) => {
+const Form = ({ setPosts, setSinglePost}) => {
     const [formTitle, setFormTitle] = useState('')
     const [formBody, setFormBody] = useState('')
     // useEffect(() => {
@@ -17,7 +17,8 @@ const Form = ({ setPosts}) => {
         event.preventDefault()
         setFormTitle('')
         setFormBody('')
-        setPosts(formBody, formTitle)
+        setSinglePost(formBody, formTitle)
+        // setPosts(formBody, formTitle)
     }
 
     return (
@@ -41,8 +42,8 @@ const Form = ({ setPosts}) => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        setPosts: (body, title) => dispatch(setPost({id: Math.floor(Math.random() * 1000), body, title})),
-        // savePost: () => console.log('csááá')
+        setPosts: () => dispatch(setPost()),
+        setSinglePost: (body,title) => dispatch(savePost({id: Math.floor(Math.random() * 1000), body, title}))
     }
 }
 

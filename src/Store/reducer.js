@@ -1,4 +1,4 @@
-import { SET_POSTS, DELETE_POSTS, SET_DELETED_TO_DEFAULT } from './Actions/actions'
+import { SET_POSTS, DELETE_POSTS, SET_DELETED_TO_DEFAULT } from './Actions/actionTypes'
 const initialState ={
     posts: [ ],
     isDeleted: false,

@@ -3,7 +3,7 @@ import CardClasses from './BaseCard.module.scss'
 import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
-import {DELETE_POSTS, SET_DELETED_TO_DEFAULT} from '../../../Store/Actions/actions'
+import {DELETE_POSTS, SET_DELETED_TO_DEFAULT} from '../../../Store/Actions/actionTypes'
 
 const Button = React.lazy(() => import('../Button/BaseButton'))
 
