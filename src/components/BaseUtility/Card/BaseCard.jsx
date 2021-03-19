@@ -3,7 +3,8 @@ import CardClasses from './BaseCard.module.scss'
 import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
-import {DELETE_POSTS, SET_DELETED_TO_DEFAULT} from '../../../Store/Actions/actionTypes'
+import {SET_DELETED_TO_DEFAULT} from '../../../Store/Actions/actionTypes'
+import { removePost } from '../../../Store/Actions/index'
 
 const Button = React.lazy(() => import('../Button/BaseButton'))
 
@@ -33,9 +34,10 @@ BaseCard.propTypes = {
 const mapDispatchToProps = dispatch => {
     return{
         deletePost: (inputId) => {
-            dispatch({ type: DELETE_POSTS, id: inputId})
+            dispatch(removePost(inputId))
             setTimeout(() => dispatch({ type: SET_DELETED_TO_DEFAULT }), 2500)
-        }
+        },
+        
     }
 }
 

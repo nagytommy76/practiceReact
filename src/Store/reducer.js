@@ -1,6 +1,6 @@
 import { SET_POSTS, DELETE_POSTS, SET_DELETED_TO_DEFAULT } from './Actions/actionTypes'
 const initialState ={
-    posts: [ ],
+    posts: [],
     isDeleted: false,
     deletedId: null,
     hasError: {
@@ -30,7 +30,7 @@ const reducer = (state = initialState, action) => {
                 isDeleted: state.isDeleted = true,
                 deletedId: state.deletedId = action.id
             }  
-        case SET_DELETED_TO_DEFAULT:
+        case SET_DELETED_TO_DEFAULT: // Ennek egy külön alert store jó lenne... mert ez az alert komponenshez tartozik
             return{
                 ...state,
                 isDeleted: state.isDeleted = false,

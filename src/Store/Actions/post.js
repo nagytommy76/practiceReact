@@ -10,10 +10,16 @@ export const savePost = (payload) => {
 export const setPost = () =>{
     return dispatch => {
         axios.get('https://jsonplaceholder.typicode.com/posts').then(result =>{
-            console.log(result)
             dispatch(savePost(result.data))
         }).catch(error => {
             console.log(error)
         })
+    }
+}
+
+export const removePost = (id) => {
+    return {
+        type: actionTypes.DELETE_POSTS,
+        id
     }
 }
